@@ -1,0 +1,389 @@
+/**
+ * Tweet Scheduler - Custom Styles
+ */
+
+:root {
+    --primary-color: #1da1f2;
+    --secondary-color: #14171a;
+    --success-color: #17bf63;
+    --warning-color: #ffad1f;
+    --danger-color: #e0245e;
+    --background-color: #f5f8fa;
+    --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+}
+
+body {
+    background-color: var(--background-color);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* Navbar */
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+
+.navbar-dark {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Cards */
+.card {
+    border: none;
+    box-shadow: var(--card-shadow);
+    border-radius: 12px;
+    margin-bottom: 2rem;
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+.card-header {
+    background-color: #fff;
+    border-bottom: 1px solid #e1e8ed;
+    border-radius: 12px 12px 0 0 !important;
+}
+
+/* Progress Bar */
+.progress {
+    border-radius: 10px;
+    background-color: #e1e8ed;
+}
+
+.progress-bar {
+    font-weight: bold;
+    transition: width 0.5s ease;
+}
+
+/* Tables */
+.table {
+    background-color: white;
+}
+
+.table thead {
+    background-color: #f5f8fa;
+}
+
+.table-hover tbody tr:hover {
+    background-color: #f5f8fa;
+}
+
+/* Forms */
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(29, 161, 242, 0.25);
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: #1a91da;
+    border-color: #1a91da;
+}
+
+/* Badges */
+.badge {
+    padding: 0.35em 0.65em;
+    border-radius: 6px;
+}
+
+/* Login Modal */
+#loginModal .modal-content {
+    border-radius: 16px;
+    border: none;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+#loginModal .modal-header {
+    border-bottom: 1px solid #e1e8ed;
+}
+
+/* Global Spinner */
+#globalSpinner {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+}
+
+/* File Input */
+.form-control[type="file"] {
+    padding: 0.6rem;
+}
+
+/* Pre/Code blocks */
+pre {
+    border: 1px solid #e1e8ed;
+    border-radius: 8px;
+}
+
+pre code {
+    color: #14171a;
+}
+
+/* Alerts */
+.alert {
+    border-radius: 8px;
+    border: none;
+}
+
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.alert-warning {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.alert-info {
+    background-color: #d1ecf1;
+    color: #0c5460;
+}
+
+/* Section Titles */
+h2 {
+    color: var(--secondary-color);
+    font-weight: bold;
+}
+
+/* Stats Cards */
+.card-body h5 {
+    color: #657786;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.5rem;
+}
+
+.card-body h3 {
+    color: var(--secondary-color);
+    font-weight: bold;
+    margin: 0;
+}
+
+/* Responsive Tables */
+.table-responsive {
+    border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+    .table {
+        font-size: 0.875rem;
+    }
+
+    .card {
+        margin-bottom: 1rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Loading States */
+.spinner-border {
+    width: 3rem;
+    height: 3rem;
+}
+
+/* Links */
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+a:hover {
+    color: #1a91da;
+    text-decoration: underline;
+}
+
+/* Icons in buttons */
+.btn i {
+    margin-right: 0.25rem;
+}
+
+/* Spacing utilities */
+.mt-4 { margin-top: 2rem !important; }
+.mb-4 { margin-bottom: 2rem !important; }
+.py-4 { padding-top: 2rem !important; padding-bottom: 2rem !important; }
+
+/* Content container spacing */
+.container-fluid {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* For larger screens, add more breathing room */
+@media (min-width: 1200px) {
+    .container-fluid {
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
+}
+
+/* Section titles spacing */
+.content-section h2 {
+    margin-bottom: 2rem;
+}
+
+/* Form elements spacing */
+.form-control,
+.form-select {
+    margin-bottom: 0.5rem;
+}
+
+.mb-3 {
+    margin-bottom: 1.5rem !important;
+}
+
+/* Table spacing */
+.table {
+    margin-bottom: 1.5rem;
+}
+
+.table th,
+.table td {
+    padding: 1rem;
+}
+
+/* Row spacing */
+.row {
+    margin-bottom: 1rem;
+}
+
+/* Status badges colors */
+.bg-warning {
+    background-color: var(--warning-color) !important;
+}
+
+.bg-success {
+    background-color: var(--success-color) !important;
+}
+
+.bg-danger {
+    background-color: var(--danger-color) !important;
+}
+
+/* Navigation active state */
+.nav-link.active {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+/* Tabs styling */
+.nav-tabs {
+    border-bottom: 2px solid #e1e8ed;
+}
+
+.nav-tabs .nav-link {
+    color: #657786;
+    border: none;
+    border-bottom: 3px solid transparent;
+    padding: 1rem 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.nav-tabs .nav-link:hover {
+    color: var(--primary-color);
+    border-bottom-color: #e1e8ed;
+}
+
+.nav-tabs .nav-link.active {
+    color: var(--primary-color);
+    background-color: transparent;
+    border-bottom-color: var(--primary-color);
+    font-weight: 600;
+}
+
+.tab-content {
+    margin-top: 1.5rem;
+}
+
+/* Card hover effect */
+.card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Tweet text preview (clickable) */
+.tweet-text-preview {
+    cursor: pointer;
+    color: var(--primary-color);
+    transition: opacity 0.2s ease;
+}
+
+.tweet-text-preview:hover {
+    opacity: 0.8;
+    text-decoration: underline;
+}
+
+/* Animation for page transitions */
+.content-section {
+    animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Success/Error messages */
+.alert {
+    animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

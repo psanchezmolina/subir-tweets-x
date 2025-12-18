@@ -1,0 +1,40 @@
+# Node
+node_modules/
+npm-debug.log
+package-lock.json
+
+# Environment
+.env
+.env.*
+
+# Uploads
+uploads/*
+*.csv
+*.xlsx
+*.xls
+
+# Git
+.git/
+.gitignore
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+logs/
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Documentation
+README.md
+.claude/
+
+# Testing
+test/
+*.test.js

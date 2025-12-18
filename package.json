@@ -1,0 +1,37 @@
+{
+  "name": "subir-tweets-x",
+  "version": "1.0.0",
+  "description": "Programador automático de tweets para X (Twitter) con scheduling y gestión de threads",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "twitter",
+    "x",
+    "scheduler",
+    "tweets",
+    "automation"
+  ],
+  "author": "",
+  "license": "MIT",
+  "type": "commonjs",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.88.0",
+    "axios": "^1.13.2",
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "express-rate-limit": "^8.2.1",
+    "express-session": "^1.18.2",
+    "helmet": "^8.1.0",
+    "multer": "^2.0.2",
+    "node-cron": "^4.2.1",
+    "papaparse": "^5.5.3",
+    "twitter-api-v2": "^1.28.0",
+    "xlsx": "^0.18.5"
+  }
+}
