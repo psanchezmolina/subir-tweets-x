@@ -8,7 +8,12 @@
  * - Servir archivos estáticos del frontend
  */
 
-require('dotenv').config();
+// Cargar variables de entorno desde .env (solo en desarrollo)
+// En producción (Docker/Easypanel), las variables se inyectan directamente
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config();
+}
+
 const express = require('express');
 const session = require('express-session');
 const cors = require('cors');
@@ -48,7 +53,8 @@ app.use(helmet({
       scriptSrc: ["'self'", "'unsafe-inline'", "https://cdn.jsdelivr.net"],
       scriptSrcAttr: ["'unsafe-inline'"], // Permite event handlers inline (onclick, etc.)
       imgSrc: ["'self'", "data:", "https:"],
-      connectSrc: ["'self'"]
+      connectSrc: ["'self'", "https://cdn.jsdelivr.net"], // Permitir source maps de CDN
+      fontSrc: ["'self'", "https://cdn.jsdelivr.net"]
     }
   }
 }));

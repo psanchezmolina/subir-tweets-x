@@ -10,14 +10,16 @@
  */
 
 const { createClient } = require('@supabase/supabase-js');
-require('dotenv').config();
 
 // Configuración del cliente Supabase
+// Las variables de entorno se cargan desde:
+// - Archivo .env en desarrollo (por dotenv en server.js)
+// - Variables de entorno del sistema en producción (Docker/Easypanel)
 const supabaseUrl = process.env.SUPABASE_URL;
 const supabaseKey = process.env.SUPABASE_SERVICE_KEY;
 
 if (!supabaseUrl || !supabaseKey) {
-  throw new Error('SUPABASE_URL y SUPABASE_SERVICE_KEY deben estar definidas en .env');
+  throw new Error('SUPABASE_URL y SUPABASE_SERVICE_KEY deben estar definidas como variables de entorno');
 }
 
 const supabase = createClient(supabaseUrl, supabaseKey);
