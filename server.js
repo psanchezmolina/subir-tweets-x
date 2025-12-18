@@ -8,10 +8,13 @@
  * - Servir archivos estáticos del frontend
  */
 
-// Cargar variables de entorno desde .env (solo en desarrollo)
+// Cargar variables de entorno desde .env (solo si existe)
 // En producción (Docker/Easypanel), las variables se inyectan directamente
-if (process.env.NODE_ENV !== 'production') {
-  require('dotenv').config();
+try {
+  require('dotenv').config({ path: '.env' });
+} catch (error) {
+  // En producción sin archivo .env, esto es normal
+  console.log('ℹ️  No se encontró archivo .env - usando variables de entorno del sistema');
 }
 
 const express = require('express');
@@ -229,11 +232,19 @@ app.listen(PORT, () => {
   console.log(`🚀  Puerto: ${PORT}`);
   console.log(`🚀  URL: http://localhost:${PORT}`);
   console.log(`🚀  Cron: ${CRON_SCHEDULE}`);
-  console.log(`🚀 ==============================================\n`);
+  console.log(`🚀 ==============================================`);
 
   // Verificar variables de entorno críticas
+  console.log('\n📋 Verificación de variables de entorno:');
+  console.log(`   SUPABASE_URL: ${process.env.SUPABASE_URL ? '✅ Configurada' : '❌ NO configurada'}`);
+  console.log(`   SUPABASE_SERVICE_KEY: ${process.env.SUPABASE_SERVICE_KEY ? '✅ Configurada' : '❌ NO configurada'}`);
+  console.log(`   SESSION_SECRET: ${process.env.SESSION_SECRET ? '✅ Configurada' : '❌ NO configurada'}`);
+  console.log(`   ADMIN_PASSWORD: ${process.env.ADMIN_PASSWORD ? '✅ Configurada' : '❌ NO configurada'}`);
+  console.log('');
+
   if (!process.env.SUPABASE_URL || !process.env.SUPABASE_SERVICE_KEY) {
-    console.warn('⚠️  WARNING: Variables SUPABASE_URL y/o SUPABASE_SERVICE_KEY no configuradas');
+    console.error('❌ ERROR CRÍTICO: SUPABASE_URL y SUPABASE_SERVICE_KEY son requeridas');
+    console.error('   Por favor configura estas variables en Easypanel');
   }
 
   if (!process.env.SESSION_SECRET || process.env.SESSION_SECRET === 'secret-por-defecto-cambiar-en-produccion') {
